@@ -1,11 +1,12 @@
 # -*- coding: utf-8 -*-
-from django.http import HttpResponse
-from django.utils import simplejson
-from routines import default_renderer
+import json
+
+from flask import jsonify
+from flask import render_template, request, url_for, redirect
 import time, random
 
 #------------------------------------------------------------------------------ 
-def get_desktop_items_data(request):
+def get_desktop_items_data():
     """
     Returns items for Desktop in JSON array:
     title
@@ -19,24 +20,20 @@ def get_desktop_items_data(request):
              {'title': 'WIN-OS/2 Window', 'icon': '/appmedia/imgs/cmd/win_wnd.png', 'left': '0px', 'top': '360px', 'action': '/cmd/?cmd=win_wnd', 'app': 'yes'},              
              {'title': 'Solitaire', 'icon': '/appmedia/imgs/files/sol.jpg', 'left': '0px', 'top': '440px', 'action': 'http://www.webolog.com/online_games/solitaire/loaderwm.swf', 'app': 'yes'},
              ]
-    
-    content = simplejson.dumps(items)
-    return HttpResponse(content)
+    #return jsonify(items=items)
+    return json.dumps(items)
 
 #------------------------------------------------------------------------------ 
-def get_lanchpad_data(request):
-    ""
-    content = {
-               }
-    return default_renderer(request, "lanchpad.html", content)
+def get_lanchpad_data():
+    return render_template("lanchpad.html")
 
 #------------------------------------------------------------------------------ 
-def get_window_data(request):
+def get_window_data():
     "Returns rendered window with iframe inside"
-    title = request.GET.get("title", "")
-    src = request.GET.get("src", "")
-    width = request.GET.get("width", "634")
-    height = request.GET.get("height", "450")
+    title = request.args.get("title", "")
+    src = request.args.get("src", "")
+    width = request.args.get("width", "634")
+    height = request.args.get("height", "450")
     win_id = int(time.time())
     
     template = "pm/base_window.html"
@@ -53,13 +50,13 @@ def get_window_data(request):
                "width": width,
                "height": height,
                }
-    return default_renderer(request, template, content)
+    return render_template(template, **content)
 
 #------------------------------------------------------------------------------ 
-def get_dialog_data(request):
+def get_dialog_data():
     "Returns rendered dialog"
-    dlg = request.GET.get("dlg", "")
-    title = request.GET.get("title", "")
+    dlg = request.args.get("dlg", "")
+    title = request.args.get("title", "")
     win_id = int(time.time())
     
     template = "dialogs/%s.html" % dlg
@@ -73,6 +70,6 @@ def get_dialog_data(request):
                "width": 290,
                "height": 150,
                }
-    return default_renderer(request, template, content)
+    return render_template(template, **content)
 
 #------------------------------------------------------------------------------ 

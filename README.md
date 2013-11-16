@@ -9,4 +9,4 @@ A long time ago I used OS/2 on my old PC. And now in free time it gives a lot of
 
 Frontend: HTML 5 + JavaScript
 
-Backend: Python + Django
+Backend: Python + Flask
