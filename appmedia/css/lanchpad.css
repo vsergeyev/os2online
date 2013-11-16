@@ -1,0 +1,71 @@
+div#lanchpad {
+	position: absolute;
+	width: 401px;
+	height: 72px;
+	left: 200px;
+	top: 400px;
+	background: url(/appmedia/imgs/lanchpad.png);
+}
+
+.button {
+	display: block;
+	position: absolute;
+	width: 70px;
+	height: 24px;
+	line-height: 24px;
+	text-decoration: none;
+}
+
+div#lanchpad .button2 {
+	display: block;
+	position: absolute;
+	width: 35px;
+	height: 35px;
+	line-height: 35px;
+	text-decoration: none;
+}
+
+div#lanchpad a#lockup {
+	left: 14px;
+	top: 10px;
+}
+
+div#lanchpad a#find {
+	left: 92px;
+	top: 10px;
+}
+
+div#lanchpad a#shut_down {
+	left: 14px;
+	top: 38px;
+}
+
+div#lanchpad a#window_list {
+	left: 92px;
+	top: 38px;
+}
+
+div#lanchpad a#printer {
+	left: 170px;
+	top: 24px;
+}
+
+div#lanchpad a#drive {
+	left: 214px;
+	top: 24px;
+}
+
+div#lanchpad a#cmd {
+	left: 260px;
+	top: 24px;
+}
+
+div#lanchpad a#tutorial {
+	left: 304px;
+	top: 24px;
+}
+
+div#lanchpad a#shredder {
+	left: 350px;
+	top: 24px;
+}

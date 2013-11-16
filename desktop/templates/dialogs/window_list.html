@@ -1,0 +1,30 @@
+{% extends "pm/base_dialog.html" %}
+
+{% block content %}
+	<style>
+		div.dlg_content {
+			background: #fff;
+			border-left: 1px solid #848284;
+			border-top: 1px solid #848284;
+			border-bottom: 1px solid #828282;
+			border-right: 1px solid #848284;
+		}
+	</style>
+		
+	<div style="font-family:courier;font-size:14px;font-weight:bold;padding:10px;height:260px;">
+		Desktop - Icon View
+		<br />
+		OS/2 System - Icon View
+		<br />
+		WebExplorer - IBM WebExplorer
+		<br />
+		
+	</div>
+		
+	<script type="text/javascript">
+		$(function() {
+			$("#wnd_{{win_id}}").width(280);
+			$("#wnd_{{win_id}}").height(300);
+		});
+	</script>	
+{% endblock %}

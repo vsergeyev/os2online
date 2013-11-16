@@ -1,0 +1,53 @@
+html, body {
+	background-color: #ffffff;
+	margin:0; 
+	padding:0;
+}
+
+div.desktop_icon {
+	position:absolute;
+	text-align:center;
+	font: 11px arial;
+	width: 150px;
+}
+
+div.desktop_icon p {
+	margin: 5px;
+}
+
+div#menu, ul#hmenu, ul#hmenu li {
+	z-index: 99;
+}
+
+div#menu, ul#hmenu ul, ul#hmenu ul li, ul#hmenu li.iehover li a {
+	background: #ffffff;
+}
+
+ul#hmenu li:hover li a {
+	background: none;
+}
+
+div#menu, div#menu li {border: 0px none;}
+div#menu {
+	border-bottom: 1px solid #000000;
+}
+
+div#menu li:hover, div#menu li:hover a, ul#hmenu li:hover li a:hover {
+	background: #848284;
+	color: white;
+	border: 0px none;
+	
+}
+
+ul#hmenu, ul#hmenu li {
+  	height: 24px;
+}
+
+ul#hmenu ul {
+	top: 23px;
+	width: 205px;
+}
+
+ul#hmenu ul li {width: 190px}
+
+ul#hmenu li.br, ul#hmenu a.br {width: 200px;}

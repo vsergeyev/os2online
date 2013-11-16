@@ -1,0 +1,62 @@
+{% extends "folders/base_folder.html" %}
+
+{% block title %}
+	OS/2 System Editor
+{% endblock %}
+
+{% block content %}
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+	<link type="text/css" rel="stylesheet" href="/appmedia/css/webexplorer.css" />
+	
+	<div id="menu">
+		<ul id="hmenu">
+			<li>
+				<a href="#">File</a>
+				<ul>
+					<li><a href="#">New</a></li>
+					<li><a href="#">Open...</a></li>
+					<li class="br"><a class="br" href="#">_________________</a></li>
+					<li><a href="#">Save</a></li>
+					<li><a href="#">Save as...</a></li>
+					<li><a href="#">Autosave...</a></li>
+				</ul>
+			</li>
+			<li>
+				<a href="#">Edit</a>
+				<ul>
+					<li><a href="#">Undo typing</a></li>
+					<li class="br"><a class="br" href="#">_________________</a></li>
+					<li><a href="#">Cut</a></li>
+					<li><a href="#">Copy</a></li>
+					<li><a href="#">Paste</a></li>
+					<li class="br"><a class="br" href="#">_________________</a></li>
+					<li><a href="#">Clear</a></li>
+					<li class="br"><a class="br" href="#">_________________</a></li>
+					<li><a href="#">Find...</a></li>
+					<li><a href="#">Select all</a></li>
+				</ul>
+			</li>
+			<li>
+				<a href="#">Options</a>
+				<ul>
+					<li><a href="#">Set font...</a></li>
+					<li><a href="#">Set colors...</a></li>
+					<li class="br"><a class="br" href="#">_________________</a></li>
+					<li><a href="#">Word wrap</a></li>
+				</ul>
+				</li>
+			<li>
+				<a href="#">Help</a>
+				<ul>
+					<li><a href="#">Help index</a></li>
+					<li><a href="#">General help</a></li>
+					<li><a href="#">Using help</a></li>
+					<li><a href="#">Keys help</a></li>
+					<li class="br"><a class="br" href="#">_________________</a></li>
+					<li><a href="#">Product information</a></li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+	<textarea style="width:100%;height:800px;border: 0px none">{{text}}</textarea>
+{% endblock %}

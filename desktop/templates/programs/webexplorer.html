@@ -1,0 +1,122 @@
+{% extends "folders/base_folder.html" %}
+
+{% block title %}
+	WebExplorer
+{% endblock %}
+
+{% block content %}
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+	<link type="text/css" rel="stylesheet" href="/appmedia/css/webexplorer.css" />
+	
+	<script type="text/javascript">
+		function load_url(url) {
+			$('#url_input').val(url);
+			$("#web_iframe").attr("src", url);
+		}
+		
+		$(function() {
+			$('#url_input').bind('keypress', function(e) { 
+			     if(e.keyCode==13) {
+			          $("#web_iframe").attr("src", $('#url_input').val());
+			          //$("#web_iframe").height($("#wnd_{{win_id}}").height() - 26 - 21);
+			     }
+			});
+			
+			//$("web_iframe").bind('load', function(e) {
+			//	$("#web_iframe").height($(parent.window).height() - 26 - 21);
+			//});
+		});
+	</script>
+	
+	<a href="" style="float:right">
+		<img src="/appmedia/imgs/web/webexplorer.png" />
+	</a>
+	
+	<div id="menu">
+		<ul id="hmenu">
+			<li>
+				<a href="#">File</a>
+				<ul>
+					<li><a href="#">Open document (URL)...</a></li>
+					<li><a href="#">Open file...</a></li>
+					<li><a href="#">Save as...</a></li>
+					<li><a href="#">Print...</a></li>
+					<li><a href="#">Printer setup...</a></li>
+					<li><a href="#">Find in document...</a></li>
+					<li><a href="#">Find next</a></li>
+					<li><a href="#">View file (HTML)</a></li>
+					<li class="br"><a class="br" href="#">_________________</a></li>
+					<li><a href="#">Halt loading document</a></li>
+					<li class="br"><a class="br" href="#">_________________</a></li>
+					<li><a href="#">Exit program</a></li>
+				</ul>
+			</li>
+			<li>
+				<a href="#">Options</a>
+				<ul>
+					<li><a href="#">Underline links</a></li>
+					<li><a href="#">Load graphics</a></li>
+					<li><a href="#">Use internal viewer</a></li>
+					<li><a href="#">Presentation mode</a></li>
+					<li><a href="#">Customized animations</a></li>
+					<li><a href="#">Show current URL</a></li>
+					<li class="br"><a class="br" href="#">_________________</a></li>
+					<li><a href="#">Save to disk mode</a></li>
+				</ul>
+				</li>
+			<li>
+				<a href="#">Configure</a>
+				<ul>
+					<li><a href="#">Servers...</a></li>
+					<li><a href="#">Fonts...</a></li>
+					<li><a href="#">Colors...</a></li>
+					<li><a href="#">Viewers...</a></li>
+					<li><a href="#">Caching...</a></li>
+				</ul>
+			</li>
+			<li>
+				<a href="#">Navigate</a>
+				<ul>
+					<li><a href="#">Backward</a></li>
+					<li><a href="#">Forward</a></li>
+					<li class="br"><a class="br" href="#">_________________</a></li>
+					<li><a href="#">Home document</a></li>
+					<li><a href="#">Reload document (URL)</a></li>
+					<li class="br"><a class="br" href="#">_________________</a></li>
+					<li><a href="#">WebMap</a></li>
+				</ul>	
+			</li>
+			<li>
+				<a href="#">QuickList</a>
+				<ul>
+					<li><a href="#" onclick="load_url('http://en.wikipedia.org/wiki/OS/2');return false;">OS/2 Warp</a></li>
+					<li><a href="#" onclick="load_url('http://google.com/');return false;">Google</a></li>
+					<li class="br"><a class="br" href="#">_________________</a></li>
+					<li><a href="#">Add current document</a></li>
+					<li class="br"><a class="br" href="#">_________________</a></li>
+					<li><a href="#">More/edit...</a></li>
+				</ul>
+			</li>
+			<li>
+				<a href="#">Help</a>
+				<ul>
+					<li><a href="#">Help index</a></li>
+					<li><a href="#">General help</a></li>
+					<li><a href="#">Using help</a></li>
+					<li><a href="#">Keys help</a></li>
+					<li><a href="#">Getting started</a></li>
+					<li class="br"><a class="br" href="#">_________________</a></li>
+					<li><a href="#">Product information</a></li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+	<div id="toolbar">
+		&nbsp;
+	</div>
+	<div id="addressbar">
+		<input type="text" id="url_input" value="http://code.google.com/p/os2online/" />
+	</div>
+
+	<iframe id="web_iframe" name="web_iframe" src="http://code.google.com/p/os2online/" width="100%" height="800" style="border:0;margin:0px;"></iframe></div>
+{% endblock %}

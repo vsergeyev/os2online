@@ -1,0 +1,14 @@
+<div class="folder_icon">
+	{% if item.app or item.dlg  %}
+		{% if item.app %}
+			<a href="#" onclick="parent.open_folder('{{item.action}}', '{{item.title}}'); return false;">
+		{% else %}
+			<a href="#" onclick="parent.open_dialog('{{item.action}}', '{{item.title}}'); return false;">
+		{% endif %}
+	{% else %}
+		<a href="{{item.action}}">
+	{% endif %}
+		<img src="{{item.icon}}" />
+		<p>{{item.title}}</p>
+	</a>
+</div>

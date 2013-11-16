@@ -1,0 +1,93 @@
+div.window_border {
+	position: absolute;
+	left: 120px;
+	top: 20px;
+	z-index: 10;
+	padding: 3px;
+	background-color: #cecfce;
+	border-top: 1px solid #ffffff;
+	border-left: 1px solid #ffffff;
+	border-bottom: 1px solid #828282;
+	border-right: 1px solid #848284;
+}
+
+div.win_border {
+	background-color: #ffff84;
+	border: 1px solid #000000;
+}
+
+div.dlg_border {
+	border: 3px solid #420084;
+	background: #cecfce;
+	padding: 0px;
+	overflow: hidden;
+	
+}
+
+div.window_title {
+	background-color: #420084;
+	color: #ffffff;
+	font: 14px courier;
+	line-height: 19px;
+	vertical-align: middle;
+	overflow: hidden;
+	padding: 0;
+}
+
+div.win_title {
+	background-color: #428284;
+	color: #ffffff;
+	line-height: 18px;
+	border: 1px solid #000000;
+	text-align: center;
+}
+
+div.window_statusbar {
+	height: 10px;
+	margin-top: 3px;
+	padding: 3px;
+	border-bottom: 1px solid #ffffff;
+	border-right: 1px solid #ffffff;
+	border-top: 1px solid #848284;
+	border-left: 1px solid #848284;
+}
+
+div.win_statusbar {
+	height: 14px;
+	padding: 3px;
+	background-color: #ffffff;
+	border-left: 1px solid #000000;
+	border-right: 1px solid #000000;
+	border-bottom: 1px solid #000000;
+}
+
+div.window_title img {
+	vertical-align: middle;
+	border: 0px none;
+}
+
+.title_btn1 {
+	float: left;
+	padding-right: 10px;
+}
+
+.title_btn2, .title_btn3 {
+	float: right;
+}
+
+div.window_content {
+	background-color: #ffffff;
+	border-left: 1px solid #848284;
+	border-top: 1px solid #848284;
+}
+
+div.win_content {
+	background-color: #ffffff;
+	border: 1px solid #000000;
+	border-bottom: 0px none;
+}
+
+div.dlg_content {
+	background: #cecfce;
+	border: 0px none;
+}

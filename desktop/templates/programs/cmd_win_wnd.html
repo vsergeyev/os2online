@@ -1,0 +1,80 @@
+{% extends "folders/base_folder.html" %}
+
+{% block title %}
+	Command line
+{% endblock %}
+
+{% block head %}
+	<link type="text/css" rel="stylesheet" href="/appmedia/css/webexplorer.css" />
+	<link type="text/css" rel="stylesheet" href="/appmedia/css/folder.css" />
+	<link type="text/css" rel="stylesheet" href="/appmedia/css/win.css" />
+	
+	<link type="text/css" rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.13/themes/base/jquery-ui.css" />
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.13/jquery-ui.min.js"></script>
+	
+	<script type="text/javascript" src="/appmedia/js/pm.js"></script>
+	
+	<script type="text/javascript">
+		$(function() {
+			$("body").append($('<div class="desktop_icon" style="left:20px;top:50px;" onclick="open_folder(\'' + '/app/win_main/' + '\', \'' + 'WIN-OS/2 Main' + '\')"><img src="/appmedia/imgs/win/group.png"/><p>' + 'WIN-OS/2 Main' + '</p></div>'));
+			$("body").append($('<div class="desktop_icon" style="left:20px;top:125px;" onclick="open_folder(\'' + '/app/win_tools/' + '\', \'' + 'WIN-OS/2 Accessories' + '\')"><img src="/appmedia/imgs/win/group.png"/><p>' + 'WIN-OS/2 Accessories' + '</p></div>'));
+			$("body").append($('<div class="desktop_icon" style="left:20px;top:200px;" onclick="open_folder(\'' + '/app/win_startup/' + '\', \'' + 'StartUp' + '\')"><img src="/appmedia/imgs/win/group.png"/><p>' + 'StartUp' + '</p></div>'));
+		});
+	</script>
+{% endblock %}
+
+{% block content %}
+	<div id="menu">
+		<ul id="hmenu">
+			<li>
+				<a href="#">File</a>
+				<ul>
+					<li><a href="#">New...</a></li>
+					<li><a href="#">Open</a></li>
+					<li><a href="#">Move...</a></li>
+					<li><a href="#">Copy...</a></li>
+					<li><a href="#">Delete</a></li>
+					<li><a href="#">Properties</a></li>
+					<li class="br"><a class="br" href="#">_________________</a></li>
+					<li><a href="#">Run...</a></li>
+					<li class="br"><a class="br" href="#">_________________</a></li>
+					<li><a href="#">Exit Win-OS/2...</a></li>
+				</ul>
+			</li>
+			<li>
+				<a href="#">Options</a>
+				<ul>
+					<li><a href="#">Auto Arrange</a></li>
+					<li><a href="#">Minimize on Use</a></li>
+					<li><a href="#">Save Settings on Exit</a></li>
+				</ul>
+			</li>
+			<li>
+				<a href="#">Window</a>
+				<ul>
+					<li><a href="#">Cascade</a></li>
+					<li><a href="#">Tile</a></li>
+					<li><a href="#">Arrange Icons</a></li>
+					<li class="br"><a class="br" href="#">_________________</a></li>
+					<li><a href="#">1 Win-OS/2 Accessories</a></li>
+					<li><a href="#">2 Win-OS/2 Main</a></li>
+					<li><a href="#">3 StartUp</a></li>
+				</ul>
+			</li>
+			<li>
+				<a href="#">Help</a>
+				<ul>
+					<li><a href="#">Contents</a></li>
+					<li><a href="#">Search for Help on...</a></li>
+					<li class="br"><a class="br" href="#">_________________</a></li>
+					<li><a href="#">How to Use Help</a></li>
+					<li class="br"><a class="br" href="#">_________________</a></li>
+					<li><a href="#">About Program Manager...</a></li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+	
+	
+{% endblock %}

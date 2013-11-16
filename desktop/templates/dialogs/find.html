@@ -1,0 +1,13 @@
+{% extends "pm/base_dialog.html" %}
+
+{% block content %}
+	<link type="text/css" rel="stylesheet" href="/appmedia/css/lanchpad.css" />
+	
+	<img src="/appmedia/imgs/dialogs/{{dlg}}.png" />
+	
+	<input type="text" style="width: 220px;position: absolute;left:72px;top:25px;height:13px;background: #ffffce;border: 0px none" />
+	<a class="button" href="#" onclick="" style="left:5px;top:165px;">&nbsp;</a>
+	<a class="button" href="#" onclick="close_window(this)" style="left:120px;top:165px;">&nbsp;</a>
+	<a class="button" href="#" onclick="open_folder('/information/', 'Information')" style="left:220px;top:165px;">&nbsp;</a>
+	
+{% endblock %}

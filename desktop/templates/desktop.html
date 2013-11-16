@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block title %}
+	Desktop
+{% endblock %}
+
+{% block head %}
+	<link type="text/css" rel="stylesheet" href="/appmedia/css/desktop.css" />
+	<link type="text/css" rel="stylesheet" href="/appmedia/css/folder.css" />
+	<link type="text/css" rel="stylesheet" href="/appmedia/css/lanchpad.css" />
+	
+	<link type="text/css" rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.13/themes/base/jquery-ui.css" />
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.13/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="https://apis.google.com/js/plusone.js">{lang: 'en'}</script>
+
+	<script type="text/javascript" src="/appmedia/js/pm.js"></script>
+	
+	<script type="text/javascript">
+		$(function() {
+			$.get('/ajax_query/get_desktop_items/', {}, function(data){
+	        	var items = eval('(' + data + ')');
+	        	$.each(items, function(index, item) {
+	        		var new_item = $('<div class="desktop_icon" style="left:' + item.left + ';top:' + item.top + ';" onclick="open_folder(\'' + item.action + '\', \'' + item.title + '\')"><img src="' + item.icon + '"/><p>' + item.title + '</p></div>');
+	        		$("body").append(new_item);
+	        	});
+	        });
+	        
+	        $.get('/ajax_query/get_lanchpad/', {}, function(data){
+	        	$("body").append(data);
+	        });
+	        
+	        open_folder('/tutorial/', 'Using OS/2');
+	        
+	        var new_item = $('<div class="desktop_icon" style="left:0;top:520px;"><g:plusone size="tall"></g:plusone></div>');
+	        $("body").append(new_item);
+		});
+	</script>
+{% endblock %}
+
+{% block content %}
+
+{% endblock %}

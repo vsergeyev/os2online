@@ -1,0 +1,16 @@
+html, body {
+	background-color: #008284;
+	margin:0; 
+	padding:0;
+}
+
+div.desktop_icon {
+	position:absolute;
+	text-align:center;
+	font: 11px arial;
+	width: 150px;
+}
+
+div.desktop_icon p {
+	margin: 5px;
+}

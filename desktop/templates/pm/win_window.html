@@ -1,0 +1,30 @@
+<div id="wnd_{{win_id}}" class="window_border win_border" style="left:{{wnd_left}}px;top:{{wnd_top}}px">
+	<div class="window_title win_title" ondblclick="maximize_window(this, 'wnd_{{win_id}}')">
+		<img src="/appmedia/imgs/win_btn1.png" class="title_btn1" ondblclick="close_window(this)" />
+		
+		{{title}}
+		
+		<img src="/appmedia/imgs/win_btn3.png" class="title_btn3" onclick="maximize_window(this, 'wnd_{{win_id}}')" />
+		
+		<img src="/appmedia/imgs/win_btn2.png" class="title_btn2" onclick="close_window(this)" />
+	</div>
+	<div class="window_content win_content">
+		<iframe id="wnd_{{win_id}}_iframe" src="{{src}}" width="100%" height="200" style="border:0;margin:0px;"></iframe></div>
+	<div class="win_statusbar">
+	</div>
+</div>
+
+<script type="text/javascript">
+	$(function() {
+		$("#wnd_{{win_id}}").draggable({ stack: ".window_border" })
+		$("#wnd_{{win_id}}").resizable({
+			resize: function(event, ui) {
+				align_wnd_iframe('wnd_{{win_id}}');
+			}
+		});
+		
+		$("#wnd_{{win_id}}").width(634);
+		$("#wnd_{{win_id}}").height(450);
+		align_wnd_iframe("wnd_{{win_id}}");
+	});
+</script>

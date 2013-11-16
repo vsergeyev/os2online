@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block title %}
+	Loading...
+{% endblock %}
+
+{% block head %}
+	<meta http-equiv="refresh" content="5;url=/c/desktop/">
+	
+	<style>
+		html, body {
+			background-color: #000000;
+		}
+		
+		#boot_img {
+			display: block;
+			margin: auto auto;
+		}
+	</style>
+{% endblock %}
+
+{% block content %}
+	<img id="boot_img" src="/appmedia/imgs/boot.png" alt="Loading..." />
+{% endblock %}

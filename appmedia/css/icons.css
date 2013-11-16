@@ -1,0 +1,16 @@
+div.folder_icon {
+	float:left;
+	text-align:center;
+	font: 11px arial;
+	width: 150px;
+	margin-top: 10px;
+}
+
+div.folder_icon p {
+	margin: 5px;
+}
+
+div.folder_icon a {
+	color: #000000;
+	text-decoration: none;
+}

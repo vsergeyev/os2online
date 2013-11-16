@@ -1,0 +1,72 @@
+{% extends "folders/base_folder.html" %}
+
+{% block title %}
+	Command line
+{% endblock %}
+
+{% block content %}
+	<link type="text/css" rel="stylesheet" href="/appmedia/css/jquery.terminal.css" />
+	<style>
+		html, body {
+			background-color: #000000;
+		}
+	</style>
+	
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+	<script type="text/javascript" src="/appmedia/js/jquery.terminal-0.3.4.min.js"></script>
+	
+	<div style="color:#ffffff;background-color:#420084;font:12px courier">
+		OS/2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ctrl+Esc = Window List&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Type HELP = help
+	</div>
+	<div id="term_demo" class="terminal"></div>
+	
+	<script type="text/javascript">
+		var current_drive = "c";
+		
+		jQuery(function($, undefined) {
+		    $('#term_demo').terminal(function(command, term) {
+		        //var result = window.eval(command);
+		        switch (command.toLowerCase()) {
+		        	case "ver":
+		        		var result = "The Operating System/2 Version is 3.00";
+		        		break;
+		        	case "a:":
+		        		var result = "SYS0021: The drive is not ready.";
+		        		break;
+		        	case "c:":
+		        		term.set_prompt('[c:\\]');
+		        		current_drive = "c";
+		        		break;
+		        	case "format c:":
+		        		var result = "FORMAT DRIVE C: COMPLETE\n\nThe volume label in drive C is OS2.\nThe volume Serial Number is 19D3:4015.";
+		        		break;
+		        	case "d:":
+		        		term.set_prompt('[d:\\]');
+		        		current_drive = "d";
+		        		break;
+		        	case "dir":
+		        		if (current_drive == "c") {
+		        			var result = "The volume label in drive C is OS2.\nThe volume Serial Number is 19D3:4015.\nDirectory of C:\\ \n\nOS2           <DIR>      6-30-11  12:24a\nPSFONTS       <DIR>      6-30-11  12:24a\nSPOOL         <DIR>      6-30-11  12:24a\nDESKTOP       <DIR>      6-30-11  12:24a\nNOWHERE       <DIR>      6-30-11  12:24a\nCONFIG.SYS        3049   7-01-11  12:07a";
+		        		}
+		        		if (current_drive == "d") {
+		        			var result = "The volume label in drive D is DATA.\nThe volume Serial Number is 19D3:4015.\nDirectory of D:\\ \n\nPROJECTS      <DIR>      6-30-11  12:24a\nPYTHON        <DIR>      6-30-11  12:24a\n";
+		        		}
+		        		break;
+		        	case "help":
+		        		var result = "o Alt+Esc to switch to the next session.\no Ctrl+Esc to switch to the Window list.\no Select Master Help Index for help about OS/2 procedures and tasks.\no Type HELP message-number for message help.\no Type HELP [BOOK] SUBJECT to receive online information.\no Type HELP ON for help text.\no Type HELP OFF for no help text.\no Type EXIT to end this OS/2 session.";
+		        		break;
+		        	default:
+		        		var result = "Bad command or file name";
+		        }
+		        
+		        if (result != undefined) {
+		            term.echo(String("\n" + result + "\n\n"));
+		        }
+		    }, {
+		        greetings: '',
+		        name: 'js_demo',
+		        height: 1000,
+		        prompt: '[c:\\]'});
+		});
+	</script>
+{% endblock %}

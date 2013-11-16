@@ -1,0 +1,20 @@
+<div id="lanchpad">
+	<a class="button" id="lockup" href="#" onclick="lockup()">&nbsp;</a>
+	<a class="button" id="find" href="#" onclick="open_dialog('find', 'Find Objects')">&nbsp;</a>
+	<a class="button" id="shut_down" href="#" onclick="open_dialog('shutdown', 'Workplace Shell')">&nbsp;</a>
+	<a class="button" id="window_list" href="#" onclick="open_dialog('window_list', 'Window list')">&nbsp;</a>
+	
+	<a class="button2" id="printer" href="#" onclick="">&nbsp;</a>
+	<a class="button2" id="drive" href="#" onclick="open_dialog('error', 'Drive A:')">&nbsp;</a>
+	<a class="button2" id="cmd" href="#" onclick="open_folder('/cmd/?cmd=os2wnd', 'OS/2 Window')">&nbsp;</a>
+	<a class="button2" id="tutorial" href="#" onclick="open_folder('/tutorial/', 'Using OS/2')">&nbsp;</a>
+	<a class="button2" id="shredder" href="#" onclick="open_folder('/system_folder/?path=shredder', 'Shredder')">&nbsp;</a>
+</div>
+
+<script type="text/javascript">
+	$(function() {
+		$("#lanchpad").offset({top: $(window).height() - $("#lanchpad").height() - 20, left: ($(window).width() - $("#lanchpad").width()) / 2});
+		
+		$("#lanchpad").draggable({})
+	});
+</script>

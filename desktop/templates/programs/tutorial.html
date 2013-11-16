@@ -1,0 +1,19 @@
+{% extends "folders/base_folder.html" %}
+
+{% block title %}
+	Tutorial
+{% endblock %}
+
+{% block content %}
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+	
+	<script type="text/javascript">
+		var page = 1;
+		function next_page() {
+			page = page + 1;
+			$("#tutorial_page").attr("src", "/appmedia/imgs/tutorial/" + page + ".png");
+		}
+		
+	</script>
+	<img id="tutorial_page" src="/appmedia/imgs/tutorial/1.png" onclick="next_page()" />
+{% endblock %}

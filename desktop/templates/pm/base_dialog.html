@@ -1,0 +1,21 @@
+<script type="text/javascript">
+	$(function() {
+		$("#wnd_{{win_id}}").width(320);
+		$("#wnd_{{win_id}}").height(200);
+		
+		$("#wnd_{{win_id}}").offset({top: ($(window).height() - $("#wnd_{{win_id}}").height()) / 2, left: ($(window).width() - $("#wnd_{{win_id}}").width()) / 2});
+		
+		$("#wnd_{{win_id}}").draggable({ stack: ".window_border" })
+	});
+</script>
+
+<div id="wnd_{{win_id}}" class="window_border dlg_border">
+	<div class="window_title" ondblclick="maximize_window(this, 'wnd_{{win_id}}')">
+		<img src="/appmedia/imgs/window_menu.png" class="title_btn1" ondblclick="close_window(this)" />
+		
+		{{title}}
+	</div>
+	<div class="window_content dlg_content">
+		{% block content %}{% endblock %}
+	</div>
+</div>

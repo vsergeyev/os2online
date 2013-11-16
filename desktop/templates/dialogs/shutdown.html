@@ -1,0 +1,18 @@
+{% extends "pm/base_dialog.html" %}
+
+{% block content %}
+	<link type="text/css" rel="stylesheet" href="/appmedia/css/lanchpad.css" />
+
+	<img src="/appmedia/imgs/dialogs/{{dlg}}.png" />
+	
+	<a class="button" href="#" onclick="shutdown()" style="left:5px;top:130px;">&nbsp;</a>
+	<a class="button" href="#" onclick="close_window(this)" style="left:80px;top:130px;">&nbsp;</a>
+	<a class="button" href="#" onclick="open_folder('/information/', 'Information')" style="left:155px;top:130px;">&nbsp;</a>
+	
+	<script type="text/javascript">
+		$(function() {
+			$("#wnd_{{win_id}}").width(320);
+			$("#wnd_{{win_id}}").height(170);
+		});
+	</script>
+{% endblock %}
